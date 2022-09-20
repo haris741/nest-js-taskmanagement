@@ -1,4 +1,5 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { TaskStatus } from "../tasks.model";
 
 @Entity()
 export class Book {
@@ -6,14 +7,13 @@ export class Book {
     id: number;
 
     @Column()
-    bookName: string;
+    title: string;
 
     @Column()
-    authorName: string;
+    description: string;
 
     @Column()
-    publishYear: number;
+    status: TaskStatus;
 
-    @Column({ default: true})
-    isAvailable: boolean;
+
 }
